@@ -1,0 +1,143 @@
+/* Platform Section Styles */
+.platform {
+    background-color: var(--primary);
+    position: relative;
+}
+
+.steps-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    width: 2px;
+    height: calc(100% - 60px);
+    background-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-50%);
+}
+
+.step-card {
+    position: relative;
+    background-color: rgba(128, 0, 128, 0.3);
+    border-radius: var(--border-radius);
+    padding: 30px 30px 30px 60px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.step-card:last-child {
+    margin-bottom: 0;
+}
+
+.step-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.step-number {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--gold);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.step-card:hover .step-number {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+.platform-note {
+    background-color: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    margin-top: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.platform-note p {
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* Responsive Platform */
+@media (max-width: 768px) {
+    .steps-container::before {
+        left: 20px;
+    }
+    
+    .step-card {
+        padding: 20px 20px 20px 50px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        left: -10px;
+    }
+    
+    .step-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .steps-container::before {
+        left: 15px;
+    }
+    
+    .step-card {
+        padding: 15px 15px 15px 40px;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+        left: -8px;
+    }
+    
+    .step-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .platform-note {
+        padding: 10px 15px;
+    }
+}

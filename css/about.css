@@ -1,0 +1,97 @@
+/* About Section Styles */
+.about {
+    background-color: var(--secondary);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    border-radius: 2px;
+}
+
+.about-text p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.about-features {
+    background-color: rgba(75, 0, 130, 0.3);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.about-features h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-features ul {
+    list-style: none;
+}
+
+.about-features ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.check-icon {
+    color: var(--gold);
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.about-features ul li span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive About */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-text h3,
+    .about-features h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text h3,
+    .about-features h3 {
+        font-size: 1.4rem;
+    }
+    
+    .about-features {
+        padding: 20px;
+    }
+}
